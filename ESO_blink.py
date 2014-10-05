@@ -41,22 +41,18 @@ def CheckConditions():
 
     # RED - close everything!
     if 20. <= WindSpeed or 90. <= Humidity:
-      blink_tool('--rgb 0xFF,0,00 --blink 3')
-      blink_tool('--rgb 0xFF,0,00')
-      #sleep(60)
+      blink_tool('--rgb 0xFF,0,00 -t 1000 --blink 30')
+
     # Pointing restriction or close NTT + 2P2
     elif 12. <= WindSpeed < 20. or 70. <= Humidity < 90.:
-      blink_tool('--rgb 0xff,0x8c,0x00 --blink 1')#Orange
-      blink_tool('--rgb 0xFF,0,00 --blink 3')#red
-      blink_tool('--rgb 0xff,0x8c,0x00 --blink 1')#orange
-      blink_tool('--rgb 0xFF,0,00 --blink 3')#red
-      blink_tool('--rgb 0xff,0x8c,0x00')#orange
-      #sleep(30)
+      for i in range(10):
+        blink_tool('--rgb 0xff,0x8c,0x00 --blink 1')#Orange
+        blink_tool('--rgb 0xFF,0,00 --blink 1')#red
+      blink_tool('--rgb 0xff,0x8c,0x00 -t 30000')#orange
+
     # YELLOW - be aware!
     elif 10. <= WindSpeed < 12. or 50. <= Humidity < 70.:
       blink_tool('--rgb 0xff,0xff,0x00 -t 1000 --blink 30')
-      #sleep(5)
-    #sleep(60)
   
 if __name__ == "__main__":
     p = Process(target=CheckConditions)
