@@ -4,7 +4,7 @@
 # E-mail: paultheastronomer@gmail.com
 #
 # 3. Oct. 2014 - Program uploaded to PC
-# 
+# # hello test 
 
 import os
 from pyquery import *
