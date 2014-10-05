@@ -1,9 +1,9 @@
 #
 # ESO blink v0.1
+# https://github.com/paultheastronomer/ESO_Blink
+#
 # Written by: Paul Anthony Wilson
 # E-mail: paultheastronomer@gmail.com
-#
-# 3. Oct. 2014 - Program uploaded to PC
 # 
 
 import os
@@ -53,6 +53,8 @@ def CheckConditions():
 
     # YELLOW - be aware!
     elif 10. <= WindSpeed < 12. or 50. <= Humidity < 70.:
+      os.system('espeak \"test\"')
+      sys.exit()
       blink_tool('--rgb 0xff,0xff,0x00 -t 1000 --blink 30')
 
     # NO LIGHT - All good!
