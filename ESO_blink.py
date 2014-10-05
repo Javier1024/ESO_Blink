@@ -54,6 +54,10 @@ def CheckConditions():
     # YELLOW - be aware!
     elif 10. <= WindSpeed < 12. or 50. <= Humidity < 70.:
       blink_tool('--rgb 0xff,0xff,0x00 -t 1000 --blink 30')
+
+    # NO LIGHT - All good!
+    elif WindSpeed < 10. or Humidity < 50.:
+      sleep(60)
   
 if __name__ == "__main__":
     p = Process(target=CheckConditions)
