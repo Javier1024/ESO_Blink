@@ -46,8 +46,9 @@ def CheckConditions():
     # Pointing restriction or close NTT + 2P2
     elif 12. <= WindSpeed < 20. or 70. <= Humidity < 90.:
       for i in range(10):
-        blink_tool('--rgb 0xff,0x8c,0x00 --blink 1')#Orange
-        blink_tool('--rgb 0xFF,0,00 --blink 1')#red
+        blink_tool('--rgb 0xff,0x8c,0x00')#Orange
+        sleep(1)
+        blink_tool('--rgb 0xFF,0,00')#red
       blink_tool('--rgb 0xff,0x8c,0x00 -t 30000')#orange
 
     # YELLOW - be aware!
