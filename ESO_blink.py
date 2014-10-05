@@ -4,7 +4,7 @@
 # E-mail: paultheastronomer@gmail.com
 #
 # 3. Oct. 2014 - Program uploaded to PC
-# edit
+# 
 
 import os
 from pyquery import *
@@ -36,9 +36,6 @@ def CheckConditions():
   while True:
     print "Collecting data"
     WindSpeed, Humidity = getData()
-    #blink_tool('--rgb 0x80,0x80,0x80')
-    #sleep(0.25)
-    #blink_tool('--off')
 
     print "\nWind:",WindSpeed,"m/s\t\tHumidity:",Humidity,"%\n"
 
